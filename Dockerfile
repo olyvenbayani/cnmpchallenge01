@@ -6,7 +6,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update the package list and install Python and pip
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
+    apt-get install -y python3 python3-pip python3-dev build-essential && \
+    pip3 install --upgrade pip setuptools wheel && \
     apt-get clean
 
 # Set the working directory in the container
